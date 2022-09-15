@@ -1,0 +1,19 @@
+body {
+	font-family: Arial;
+	text-align: center;
+}
+
+textarea {
+	resize: none;
+	border:  2px solid #ccc;
+	border-radius: 6px;
+}
+
+label {
+	font-family: "Roboto";
+	font-size: 36px;
+}
+
+input[type=submit] {
+	font-family: Roboto;
+}
