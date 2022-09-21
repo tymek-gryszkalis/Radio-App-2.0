@@ -1,23 +1,11 @@
 body {
 	margin: 0;
 	font-family: Arial;
-	text-align: center;
 	background-color: #F7F5F6;
 }
 
-textarea {
-	resize: none;
-	border:  2px solid #ccc;
-	border-radius: 6px;
-}
-
-label {
-	font-family: "Roboto";
-	font-size: 36px;
-}
-
-input[type=submit] {
-	font-family: Roboto;
+#main {
+	margin: 20px;
 }
 
 ul {
@@ -48,5 +36,85 @@ li a:hover:not(.active) {
 }
 
 .active {
-	background-color: #04AA6D;
+	background-color: #6ABA9C;
+}
+
+textarea {
+	resize: none;
+	border:  2px solid #ccc;
+	border-radius: 6px;
+	font-size: 20px;
+	background-image: url('img/note.png');
+	background-size: 20px 20px;
+	background-position: 3px 3px;
+	background-repeat: no-repeat;
+	padding-left: 25px;
+	display: block;
+	transition: 0.3s;
+}
+
+textarea:focus {
+	background-image: none;
+	padding-left: 5px;
+}
+
+label {
+	font-family: "Roboto";
+	font-size: 36px;
+}
+
+input[type=submit] {
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 30px;
+	color: black;
+	background-color: #B5FFE2;
+	border: none;
+	border-radius: 6px;
+	padding: 16px 145px;
+	transition: 0.3s;
+	display: block;
+}
+
+input[type=submit]:hover {
+	cursor: pointer;
+	color: white;
+	background-color: #6ABA9C;
+}
+
+.small_input {
+	border: 2px solid #ccc;
+	border-radius: 6px;
+	background-color: white;
+  	font-size: 20px;
+  	padding-left: 27px;
+  	background-repeat: no-repeat;
+  	display: block;
+}
+
+#autor {
+	background-image: url('img/human.png');
+	background-size: 25px 25px;
+}
+
+#date {
+	background-image: url('img/calendar.png');
+	background-size: 20px 20px;
+	background-position: 3px 2px;
+}
+
+.clear {
+	border: 2px solid #CCC;
+	border-radius: 6px;
+	font-size: 17px;
+	font-weight: bold;
+	background-color: #D8D8D8;
+	transition: 0.3s;
+	display: block;
+}
+
+.clear:hover {
+	cursor: pointer;
+	background-color: #AAAAAA;
+	border: 2px solid #AAAAAA;
 }
