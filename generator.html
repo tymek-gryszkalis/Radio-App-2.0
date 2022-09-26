@@ -14,18 +14,25 @@
 	</ul>
 	<div id="main">
 		<form>
+			<input type="reset" value="Wyczyść"><br>
 			<input type="text" name="autor" class="small_input" id="autor" placeholder="Autor"><br>
 			<input type="text" name="data" class="small_input" id="date" placeholder="Data"><br>
 
-			<textarea id="news1" name="news1" rows="4" cols="50" placeholder="Wpisz newsa"></textarea><br>
-			<button type="button" class="clear">Wyczyść</button><br>
+			<select id="zaimek" name="zaimek">
+				<option value="m">"Napisał"</option>
+				<option value="f">"Napisała"</option>
+				<option value="x">"Napisałx"</option>
+			</select>
+			<br><br>
 
-			<textarea id="news2" name="news2" rows="4" cols="50" placeholder="Wpisz newsa"></textarea><br>
-			<button type="button" class="clear">Wyczyść</button><br>
+			<input type="text" name="title1" class="small_input" id="title" placeholder="Tytuł">
+			<textarea id="news1" name="news1" rows="6" cols="100" placeholder="Zawartość"></textarea><br>
 
-			<textarea id="news3" name="news3" rows="4" cols="50" placeholder="Wpisz newsa"></textarea><br>
-			<button type="button" class="clear">Wyczyść</button><br>
+			<input type="text" name="title2" class="small_input" id="title" placeholder="Tytuł">
+			<textarea id="news2" name="news2" rows="6" cols="100" placeholder="Zawartość"></textarea><br>
 
+			<input type="text" name="title2" class="small_input" id="title" placeholder="Tytuł">
+			<textarea id="news3" name="news3" rows="6" cols="100" placeholder="Zawartość"></textarea><br>
 			<input type="submit" value="Generuj">
 		</form>
 	</div>

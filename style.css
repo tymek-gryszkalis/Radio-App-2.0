@@ -8,6 +8,10 @@ body {
 	margin: 20px;
 }
 
+form {
+	display: inline-block;
+}
+
 ul {
 	text-align: left;
 	font-weight: bold;
@@ -58,11 +62,6 @@ textarea:focus {
 	padding-left: 5px;
 }
 
-label {
-	font-family: "Roboto";
-	font-size: 36px;
-}
-
 input[type=submit] {
 	font-family: Roboto;
 	font-weight: bold;
@@ -71,7 +70,7 @@ input[type=submit] {
 	background-color: #B5FFE2;
 	border: none;
 	border-radius: 6px;
-	padding: 16px 145px;
+	padding: 16px 120px;
 	transition: 0.3s;
 	display: block;
 }
@@ -90,11 +89,18 @@ input[type=submit]:hover {
   	padding-left: 27px;
   	background-repeat: no-repeat;
   	display: block;
+  	transition: 0.3s;
+  	width: 250px;
 }
 
 #autor {
 	background-image: url('img/human.png');
 	background-size: 25px 25px;
+}
+
+#autor:focus {
+	background-image: none;
+	padding-left: 5px;
 }
 
 #date {
@@ -103,7 +109,24 @@ input[type=submit]:hover {
 	background-position: 3px 2px;
 }
 
-.clear {
+#date:focus {
+	background-image: none;
+	padding-left: 5px;
+}
+
+#title {
+	background-image: url('img/sign.png');
+	background-size: 20px 20px;
+	background-position: 3px 2px;
+	font-family: monospace;
+}
+
+#title:focus {
+	background-image: none;
+	padding-left: 5px;
+}
+
+input[type=reset] {
 	border: 2px solid #CCC;
 	border-radius: 6px;
 	font-size: 17px;
@@ -113,8 +136,15 @@ input[type=submit]:hover {
 	display: block;
 }
 
-.clear:hover {
+input[type=reset]:hover {
 	cursor: pointer;
 	background-color: #AAAAAA;
 	border: 2px solid #AAAAAA;
+}
+
+select {
+	border: 2px solid #AAAAAA;
+	border-radius: 5px;
+	color: grey;
+	font-size: 20px;
 }
