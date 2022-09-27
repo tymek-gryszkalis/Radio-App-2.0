@@ -12,7 +12,7 @@
 		<li><a class="active" href="generator.html">Generator</a></li>
 		<li><a href="poradnik.html">Poradnik</a></li>
 	</ul>
-	<div id="main" action="/action_page.php">
+	<div id="main">
 		<form id="mainform">
 			<input type="reset" value="Wyczyść"><br>
 			<input type="text" name="autor" class="small_input" id="autor" placeholder="Autor"><br>
@@ -34,21 +34,12 @@
 			<input type="text" name="title2" class="small_input" id="title" placeholder="Tytuł">
 			<textarea id="news3" name="news3" rows="6" cols="100" placeholder="Zawartość"></textarea><br>
 		</form>
-		<input type="button" value="Generuj" id="submit" onclick="submit()">
-		<div id="render">
-		</div>
 
-		<script>
-			function submit() {
-				var x = document.getElementById("mainform");
-  				var text = "";
-  				var i;
-  				for (i = 1; i < x.length ;i++) {
-    				text += x.elements[i].value + "<br>";
-  				}
-  				document.getElementById("render").innerHTML = text;
-			}
-		</script>
+		<input type="button" value="Generuj" id="submit" onclick="submit()">
+
+		<div id="render"></div>
+
+		<script src="script.js"></script>
 	</div>
 </body>
 </html>
