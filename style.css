@@ -148,3 +148,8 @@ select {
 	color: grey;
 	font-size: 20px;
 }
+
+#render {
+	text-align: center;
+	display: none;
+}

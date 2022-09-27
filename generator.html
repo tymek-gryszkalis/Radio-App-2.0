@@ -19,8 +19,8 @@
 			<input type="text" name="data" class="small_input" id="date" placeholder="Data"><br>
 
 			<select id="zaimek" name="zaimek">
-				<option value="m">"Napisał"</option>
-				<option value="f">"Napisała"</option>
+				<option value="">"Napisał"</option>
+				<option value="a">"Napisała"</option>
 				<option value="x">"Napisałx"</option>
 			</select>
 			<br><br>
@@ -37,7 +37,20 @@
 
 		<input type="button" value="Generuj" id="submit" onclick="submit()">
 
-		<div id="render"></div>
+		<div id="render">
+			<h2>Wiadomości Studenckie</h2>
+			<p id="rdata"></p>
+			<p>Minęła godzina ... to czas na wiadomości studenckie, a w nich:</p>
+			<p id="titleone"></p>
+			<p id="titletwo"></p>
+			<p id="titlethree"></p>
+			<p>Wiadomości przedstawi: [osoba]</p>
+			<p id="newsone"></p>
+			<p id="newstwo"></p>
+			<p id="newsthree"></p>
+			<p id="ending"></p>
+
+		</div>
 
 		<script src="script.js"></script>
 	</div>
