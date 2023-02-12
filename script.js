@@ -24,10 +24,35 @@ function submit_news() {
 	var toRender = document.getElementById("render");
 	toRender.style.display = "inline";
 
-	generate("wiadomości", toRender, autor)
-
-	
+	generate("Wiadomości", toRender, autor)
 }
+
+function submit_calendar() {
+	var full = document.getElementById("mainform");
+	var autor = full.elements[1].value;
+	var data = full.elements[2].value;
+	var names = full.elements[3].value;
+	var pronoun = full.elements[4].value;
+	var news_one = full.elements[5].value;
+	var news_two = full.elements[6].value;
+	var news_three = full.elements[7].value;
+
+	var	beg = "Mamy dziś " + data + ". Imieniny obchodzą: " + names + ". Oto kilka wydarzeń, które miały miejsce tego dnia."
+	var end = "A kartkę z kalendarza przygotował" + pronoun + " " + autor + ".";
+
+	document.getElementById("rdata").innerHTML = data;
+	document.getElementById("intro").innerHTML = beg;
+	document.getElementById("newsone").innerHTML = news_one;
+	document.getElementById("newstwo").innerHTML = news_two;
+	document.getElementById("newsthree").innerHTML = news_three;
+	document.getElementById("ending").innerHTML = end;
+
+	var toRender = document.getElementById("render");
+	toRender.style.display = "inline";
+
+	generate("KZK", toRender, autor)
+}
+
 
 function generate(type, tr, autor) {
 	tr.style.visibility = "visible";
