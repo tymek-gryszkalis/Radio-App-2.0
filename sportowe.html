@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>generator</title>
+	<title>kurier</title>
 	<link rel="stylesheet" href="style.css"/>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300">
 </head>
 <body>
 	<div id="menu">
 		<ul>
-			<li><a class="active" href="generator.html">Generator</a></li>
-			<li><a href="kartka">Kartka</a></li>
-			<li><a href="kurier">Kurier</a></li>
-			<li><a href="sportowe">Sportowe</a></li>
+			<li><a href="generator.html">Wiadomości</a></li>
+			<li><a href="kartka.html">Kartka</a></li>
+			<li><a href="kurier.html">Kurier</a></li>
+			<li><a class="active" href="sportowe.html">Sportowe</a></li>
 			<li><a href="poradnik.html">Poradnik</a></li>
 		</ul>
 	</div>
@@ -24,32 +24,25 @@
 			<input type="text" name="data" class="small_input" id="date" placeholder="Data"><br>
 
 			<select id="zaimek" name="zaimek">
-				<option value="">"Napisał"</option>
-				<option value="a">"Napisała"</option>
-				<option value="x">"Napisałx"</option>
+				<option value="">"Przygotował"</option>
+				<option value="a">"Przygotowała"</option>
+				<option value="o">"Przygotowało"</option>
 			</select>
+
 			<br><br>
 
-			<input type="text" name="title1" class="small_input" id="title" placeholder="Tytuł">
 			<textarea id="news1" name="news1" rows="6" cols="100" placeholder="Zawartość"></textarea><br>
 
-			<input type="text" name="title2" class="small_input" id="title" placeholder="Tytuł">
 			<textarea id="news2" name="news2" rows="6" cols="100" placeholder="Zawartość"></textarea><br>
 
-			<input type="text" name="title2" class="small_input" id="title" placeholder="Tytuł">
 			<textarea id="news3" name="news3" rows="6" cols="100" placeholder="Zawartość"></textarea><br>
 		</form>
 
-		<input type="button" value="Generuj" id="submit" onclick="submit_news()">
+		<input type="button" value="Generuj" id="submit" onclick="submit_sport()">
 
 		<div id="render", style="visibility: hidden;">
-			<h2>Wiadomości Studenckie</h2>
+			<h2>Wiadomości sportowe</h2>
 			<p id="rdata">22.22.22</p><br>
-			<p>Minęła godzina 19:00 to czas na wiadomości studenckie, a w nich:</p><br>
-			<p class="title" id="titleone"></p>
-			<p class="title" id="titletwo"></p>
-			<p class="title" id="titlethree"></p><br>
-			<p>Wiadomości przedstawi: [osoba]</p><br>
 			<p class="news" id="newsone"></p>
 			<p class="news" id="newstwo"></p>
 			<p class="news" id="newsthree"></p><br>
