@@ -28,10 +28,10 @@ function submit_news(type) {
 	} else {
 		generatePNG("Wiadomości", toRender, autor)
 	}
-	toRender.style.visibility = "hidden";
+	toRender.style.display = "none";
 }
 
-function submit_calendar() {
+function submit_calendar(type) {
 	var full = document.getElementById("mainform");
 	var autor = full.elements[1].value;
 	var data = full.elements[2].value;
@@ -53,16 +53,15 @@ function submit_calendar() {
 
 	var toRender = document.getElementById("render");
 	toRender.style.display = "inline";
-
 	if (type == 'pdf') {
-		generatePDF("Wiadomości", toRender, autor)
+		generatePDF("Kartka", toRender, autor)
 	} else {
-		generatePNG("Wiadomości", toRender, autor)
+		generatePNG("Kartka", toRender, autor)
 	}
-	toRender.style.visibility = "hidden";
+	toRender.style.display = "none";
 }
 
-function submit_culture() {
+function submit_culture(type) {
 	var full = document.getElementById("mainform");
 	var autor = full.elements[1].value;
 	var data = full.elements[2].value;
@@ -81,15 +80,15 @@ function submit_culture() {
 
 	var toRender = document.getElementById("render");
 	toRender.style.display = "inline";
-
 	if (type == 'pdf') {
-		generatePDF("Wiadomości", toRender, autor)
+		generatePDF("Kurier", toRender, autor)
 	} else {
-		generatePNG("Wiadomości", toRender, autor)
+		generatePNG("Kurier", toRender, autor)
 	}
-	toRender.style.visibility = "hidden";}
+	toRender.style.display = "none";
+}
 
-function submit_sport() {
+function submit_sport(type) {
 	var full = document.getElementById("mainform");
 	var autor = full.elements[1].value;
 	var data = full.elements[2].value;
@@ -108,27 +107,28 @@ function submit_sport() {
 
 	var toRender = document.getElementById("render");
 	toRender.style.display = "inline";
-
 	if (type == 'pdf') {
-		generatePDF("Wiadomości", toRender, autor)
+		generatePDF("Sportowe", toRender, autor)
 	} else {
-		generatePNG("Wiadomości", toRender, autor)
+		generatePNG("Sportowe", toRender, autor)
 	}
-	toRender.style.visibility = "hidden";}
+	toRender.style.display = "none";
+}
 
 function generatePDF(type, tr, autor) {
-	tr.style.visibility = "visible";
+	var clonedElement = tr.cloneNode(true);
+    clonedElement.style.display = "block";
 	var opt = {
 		margin: 0.5,
 		filename: type + " " + autor,
 		jsPDF: {unit: 'in', orientation: 'portrait', format: 'letter'},
 		html2canvas: {scale: 2}
 	};
-	html2pdf().set(opt).from(tr).save();
+	html2pdf().set(opt).from(clonedElement).save();
+	clonedElement.remove();
 }
 
 function generatePNG(type, tr, autor) {
-	tr.style.visibility = "visible";
 	html2canvas(tr).then((canvas) => {
 		const base64image = canvas.toDataURL("image/png");
 		var anchor = document.createElement('a');

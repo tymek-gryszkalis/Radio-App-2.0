@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>kurier</title>
+	<title>sportowe</title>
 	<link rel="stylesheet" href="style.css"/>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300">
 </head>
@@ -38,9 +38,10 @@
 			<textarea id="news3" name="news3" rows="6" cols="100" placeholder="Zawartość"></textarea><br>
 		</form>
 
-		<input type="button" value="Generuj" id="submit" onclick="submit_sport()">
+		<input type="button" value="Generuj PDF" id="submit" onclick="submit_sport('pdf')"><br>
+		<input type="button" value="Generuj PNG" id="submit" onclick="submit_sport('png')">
 
-		<div id="render", style="visibility: hidden;">
+		<div id="render", style="display: none">
 			<h2>Wiadomości sportowe</h2>
 			<p id="rdata">22.22.22</p><br>
 			<p class="news" id="newsone"></p>
@@ -52,6 +53,7 @@
 
 		<script src="script.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+		<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 	</div>
 </body>
 </html>
