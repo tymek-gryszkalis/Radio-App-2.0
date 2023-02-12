@@ -1,4 +1,4 @@
-function submit_news() {
+function submit_news(type) {
 	var full = document.getElementById("mainform");
 	var autor = full.elements[1].value;
 	var data = full.elements[2].value;
@@ -23,8 +23,12 @@ function submit_news() {
 
 	var toRender = document.getElementById("render");
 	toRender.style.display = "inline";
-
-	generatePDF("Wiadomości", toRender, autor)
+	if (type == 'pdf') {
+		generatePDF("Wiadomości", toRender, autor)
+	} else {
+		generatePNG("Wiadomości", toRender, autor)
+	}
+	toRender.style.visibility = "hidden";
 }
 
 function submit_calendar() {
@@ -50,7 +54,12 @@ function submit_calendar() {
 	var toRender = document.getElementById("render");
 	toRender.style.display = "inline";
 
-	generatePDF("Kartka", toRender, autor)
+	if (type == 'pdf') {
+		generatePDF("Wiadomości", toRender, autor)
+	} else {
+		generatePNG("Wiadomości", toRender, autor)
+	}
+	toRender.style.visibility = "hidden";
 }
 
 function submit_culture() {
@@ -73,8 +82,12 @@ function submit_culture() {
 	var toRender = document.getElementById("render");
 	toRender.style.display = "inline";
 
-	generatePDF("Kurier", toRender, autor)
-}
+	if (type == 'pdf') {
+		generatePDF("Wiadomości", toRender, autor)
+	} else {
+		generatePNG("Wiadomości", toRender, autor)
+	}
+	toRender.style.visibility = "hidden";}
 
 function submit_sport() {
 	var full = document.getElementById("mainform");
@@ -96,8 +109,12 @@ function submit_sport() {
 	var toRender = document.getElementById("render");
 	toRender.style.display = "inline";
 
-	generatePDF("Sportowe", toRender, autor)
-}
+	if (type == 'pdf') {
+		generatePDF("Wiadomości", toRender, autor)
+	} else {
+		generatePNG("Wiadomości", toRender, autor)
+	}
+	toRender.style.visibility = "hidden";}
 
 function generatePDF(type, tr, autor) {
 	tr.style.visibility = "visible";
@@ -108,4 +125,16 @@ function generatePDF(type, tr, autor) {
 		html2canvas: {scale: 2}
 	};
 	html2pdf().set(opt).from(tr).save();
+}
+
+function generatePNG(type, tr, autor) {
+	tr.style.visibility = "visible";
+	html2canvas(tr).then((canvas) => {
+		const base64image = canvas.toDataURL("image/png");
+		var anchor = document.createElement('a');
+		anchor.setAttribute("href", base64image);
+		anchor.setAttribute("download", "my-image.png");
+		anchor.click();
+		anchor.remove();
+	});
 }
