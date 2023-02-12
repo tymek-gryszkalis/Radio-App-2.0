@@ -167,6 +167,8 @@ h2 {
 
 .news {
 	text-align: left;
+	word-wrap: normal;
+	width: 1000px;
 }
 
 .title {

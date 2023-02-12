@@ -10,6 +10,9 @@
 <body>
 	<ul>
 		<li><a class="active" href="generator.html">Generator</a></li>
+		<li><a href="kartka">Kartka</a></li>
+		<li><a href="kurier">Kurier</a></li>
+		<li><a href="sportowe">Sportowe</a></li>
 		<li><a href="poradnik.html">Poradnik</a></li>
 	</ul>
 	<div id="main">
@@ -35,12 +38,12 @@
 			<textarea id="news3" name="news3" rows="6" cols="100" placeholder="Zawartość"></textarea><br>
 		</form>
 
-		<input type="button" value="Generuj" id="submit" onclick="submit()">
+		<input type="button" value="Generuj" id="submit" onclick="submit_news()">
 
-		<div id="render">
+		<div id="render", style="visibility: hidden;">
 			<h2>Wiadomości Studenckie</h2>
 			<p id="rdata">22.22.22</p><br>
-			<p>Minęła godzina ... to czas na wiadomości studenckie, a w nich:</p><br>
+			<p>Minęła godzina 19:00 to czas na wiadomości studenckie, a w nich:</p><br>
 			<p class="title" id="titleone"></p>
 			<p class="title" id="titletwo"></p>
 			<p class="title" id="titlethree"></p><br>
@@ -53,6 +56,7 @@
 		</div>
 
 		<script src="script.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 	</div>
 </body>
 </html>

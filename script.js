@@ -1,4 +1,4 @@
-function submit() {
+function submit_news() {
 	var full = document.getElementById("mainform");
 	var autor = full.elements[1].value;
 	var data = full.elements[2].value;
@@ -21,5 +21,21 @@ function submit() {
 	document.getElementById("newsthree").innerHTML = news_three;
 	document.getElementById("ending").innerHTML = prepared;
 
-	document.getElementById("render").style.display = "inline";
+	var toRender = document.getElementById("render");
+	toRender.style.display = "inline";
+
+	generate("wiadomości", toRender, autor)
+
+	
+}
+
+function generate(type, tr, autor) {
+	tr.style.visibility = "visible";
+	var opt = {
+		margin: 0.5,
+		filename: type + " " + autor,
+		jsPDF: {unit: 'in', orientation: 'portrait', format: 'letter'},
+		html2canvas: {scale: 2}
+	};
+	html2pdf().set(opt).from(tr).save();
 }
