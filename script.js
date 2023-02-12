@@ -24,7 +24,7 @@ function submit_news() {
 	var toRender = document.getElementById("render");
 	toRender.style.display = "inline";
 
-	generate("Wiadomości", toRender, autor)
+	generatePDF("Wiadomości", toRender, autor)
 }
 
 function submit_calendar() {
@@ -50,11 +50,56 @@ function submit_calendar() {
 	var toRender = document.getElementById("render");
 	toRender.style.display = "inline";
 
-	generate("KZK", toRender, autor)
+	generatePDF("Kartka", toRender, autor)
 }
 
+function submit_culture() {
+	var full = document.getElementById("mainform");
+	var autor = full.elements[1].value;
+	var data = full.elements[2].value;
+	var pronoun = full.elements[3].value;
+	var news_one = full.elements[4].value;
+	var news_two = full.elements[5].value;
+	var news_three = full.elements[6].value;
 
-function generate(type, tr, autor) {
+	var end = "A kuriera przygotował" + pronoun + " " + autor + ".";
+
+	document.getElementById("rdata").innerHTML = data;
+	document.getElementById("newsone").innerHTML = news_one;
+	document.getElementById("newstwo").innerHTML = news_two;
+	document.getElementById("newsthree").innerHTML = news_three;
+	document.getElementById("ending").innerHTML = end;
+
+	var toRender = document.getElementById("render");
+	toRender.style.display = "inline";
+
+	generatePDF("Kurier", toRender, autor)
+}
+
+function submit_sport() {
+	var full = document.getElementById("mainform");
+	var autor = full.elements[1].value;
+	var data = full.elements[2].value;
+	var pronoun = full.elements[3].value;
+	var news_one = full.elements[4].value;
+	var news_two = full.elements[5].value;
+	var news_three = full.elements[6].value;
+
+	var end = "A wiadomości sportowe przygotował" + pronoun + " " + autor + ".";
+
+	document.getElementById("rdata").innerHTML = data;
+	document.getElementById("newsone").innerHTML = news_one;
+	document.getElementById("newstwo").innerHTML = news_two;
+	document.getElementById("newsthree").innerHTML = news_three;
+	document.getElementById("ending").innerHTML = end;
+
+	var toRender = document.getElementById("render");
+	toRender.style.display = "inline";
+
+	generatePDF("Sportowe", toRender, autor)
+}
+
+function generatePDF(type, tr, autor) {
 	tr.style.visibility = "visible";
 	var opt = {
 		margin: 0.5,
