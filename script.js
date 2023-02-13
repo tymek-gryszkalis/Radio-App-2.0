@@ -10,7 +10,7 @@ function submit_news(type) {
 	var title_three = full.elements[8].value.toUpperCase();
 	var news_three = full.elements[9].value;
 
-	var prepared = "A wiadomości przygotował" + pronoun + " " + autor + ".";
+	var prepared = "A wiadomości przygotował" + pronoun + " <b>" + autor + "</b>.";
 
 	document.getElementById("rdata").innerHTML = data;
 	document.getElementById("titleone").innerHTML = title_one;
@@ -119,10 +119,10 @@ function generatePDF(type, tr, autor) {
 	var clonedElement = tr.cloneNode(true);
     clonedElement.style.display = "block";
 	var opt = {
-		margin: 0.5,
 		filename: type + " " + autor,
+		image : {type: 'jpeg', quality: 0.98},
 		jsPDF: {unit: 'in', orientation: 'portrait', format: 'letter'},
-		html2canvas: {scale: 2}
+		html2canvas: {scale: 2, userCORS: true}
 	};
 	html2pdf().set(opt).from(clonedElement).save();
 	clonedElement.remove();
