@@ -1,6 +1,6 @@
 @font-face {
 	font-family: pw_font;
-	src: url(radikalwut-bold.otf);
+	src: url(resources/radikalwut-bold.otf);
 }
 
 body {
@@ -191,8 +191,11 @@ select {
 }
 
 #render {
-	font-family: monospace;
+	font-family: 'Courier Prime';
 	font-size: 20px;
+	height: 1055px;
+	width: 900px;
+	background-color: #E6F1EC;
 }
 
 #logo {

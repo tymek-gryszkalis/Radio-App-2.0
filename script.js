@@ -22,7 +22,7 @@ function submit_news(type) {
 	document.getElementById("ending").innerHTML = prepared;
 
 	var toRender = document.getElementById("render");
-	toRender.style.display = "inline";
+	toRender.style.display = "block";
 	if (type == 'pdf') {
 		generatePDF("Wiadomości", toRender, autor)
 	} else {
