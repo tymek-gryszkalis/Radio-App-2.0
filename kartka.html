@@ -6,6 +6,7 @@
 	<title>kartka</title>
 	<link rel="stylesheet" href="style.css"/>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courier+Prime">
 </head>
 <body>
 	<div id="menu">
@@ -43,14 +44,20 @@
 		<input type="button" value="Generuj PNG" id="submit" onclick="submit_calendar('png')">
 
 		<div id="render", style="display: none">
-			<h2>Kartka z kalendarza</h2>
-			<p id="rdata">22.22.22</p><br>
-			<p class="title" id="intro"></p>
-			<p class="news" id="newsone"></p>
-			<p class="news" id="newstwo"></p>
-			<p class="news" id="newsthree"></p><br>
+			<div id="header">
+				<!-- <img src="img/logo.jpeg" id="logo"/> -->
+				<p id="name">Kartka z kalendarza<p>
+				<p id="rdata">22.22.22</p>
+			</div>
+			<div id="lead">
+				<p id="intro"></p>
+			</div>
+			<div id="newses">
+				<p class="news" id="newsone"></p>
+				<p class="news" id="newstwo"></p>
+				<p class="news" id="newsthree"></p>
+			</div>
 			<p id="ending"></p>
-
 		</div>
 
 		<script src="script.js"></script>

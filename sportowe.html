@@ -6,6 +6,7 @@
 	<title>sportowe</title>
 	<link rel="stylesheet" href="style.css"/>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courier+Prime">
 </head>
 <body>
 	<div id="menu">
@@ -42,13 +43,17 @@
 		<input type="button" value="Generuj PNG" id="submit" onclick="submit_sport('png')">
 
 		<div id="render", style="display: none">
-			<h2>Wiadomości sportowe</h2>
-			<p id="rdata">22.22.22</p><br>
-			<p class="news" id="newsone"></p>
-			<p class="news" id="newstwo"></p>
-			<p class="news" id="newsthree"></p><br>
+			<div id="header">
+				<!-- <img src="img/logo.jpeg" id="logo"/> -->
+				<p id="name">Wiadomości sportowe<p>
+				<p id="rdata">22.22.22</p>
+			</div><br>
+			<div id="newses">
+				<p class="news" id="newsone"></p>
+				<p class="news" id="newstwo"></p>
+				<p class="news" id="newsthree"></p>
+			</div><br>
 			<p id="ending"></p>
-
 		</div>
 
 		<script src="script.js"></script>

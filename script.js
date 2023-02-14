@@ -41,8 +41,8 @@ function submit_calendar(type) {
 	var news_two = full.elements[6].value;
 	var news_three = full.elements[7].value;
 
-	var	beg = "Mamy dziś " + data + ". Imieniny obchodzą: " + names + ". Oto kilka wydarzeń, które miały miejsce tego dnia."
-	var end = "A kartkę z kalendarza przygotował" + pronoun + " " + autor + ".";
+	var	beg = "Mamy dziś <b>" + data + "</b>. Imieniny obchodzą: <b>" + names + "</b>. Oto kilka wydarzeń, które miały miejsce tego dnia:"
+	var end = "A kartkę z kalendarza przygotował" + pronoun + " <b>" + autor + "</b>.";
 
 	document.getElementById("rdata").innerHTML = data;
 	document.getElementById("intro").innerHTML = beg;
@@ -52,7 +52,7 @@ function submit_calendar(type) {
 	document.getElementById("ending").innerHTML = end;
 
 	var toRender = document.getElementById("render");
-	toRender.style.display = "inline";
+	toRender.style.display = "block";
 	if (type == 'pdf') {
 		generatePDF("Kartka", toRender, autor)
 	} else {
@@ -70,7 +70,7 @@ function submit_culture(type) {
 	var news_two = full.elements[5].value;
 	var news_three = full.elements[6].value;
 
-	var end = "A kuriera przygotował" + pronoun + " " + autor + ".";
+	var end = "A kuriera przygotował" + pronoun + " <b>" + autor + "</b>.";
 
 	document.getElementById("rdata").innerHTML = data;
 	document.getElementById("newsone").innerHTML = news_one;
@@ -79,7 +79,7 @@ function submit_culture(type) {
 	document.getElementById("ending").innerHTML = end;
 
 	var toRender = document.getElementById("render");
-	toRender.style.display = "inline";
+	toRender.style.display = "block";
 	if (type == 'pdf') {
 		generatePDF("Kurier", toRender, autor)
 	} else {
@@ -97,7 +97,7 @@ function submit_sport(type) {
 	var news_two = full.elements[5].value;
 	var news_three = full.elements[6].value;
 
-	var end = "A wiadomości sportowe przygotował" + pronoun + " " + autor + ".";
+	var end = "A wiadomości sportowe przygotował" + pronoun + " <b>" + autor + "</b>.";
 
 	document.getElementById("rdata").innerHTML = data;
 	document.getElementById("newsone").innerHTML = news_one;
@@ -106,7 +106,7 @@ function submit_sport(type) {
 	document.getElementById("ending").innerHTML = end;
 
 	var toRender = document.getElementById("render");
-	toRender.style.display = "inline";
+	toRender.style.display = "block";
 	if (type == 'pdf') {
 		generatePDF("Sportowe", toRender, autor)
 	} else {
